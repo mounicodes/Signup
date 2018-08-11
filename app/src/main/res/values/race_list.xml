@@ -1,0 +1,20 @@
+<resources>
+    <string-array name="race_array">
+        <item>Prefer not to answer</item>
+        <item>African</item>
+        <item>Hispanic</item>
+        <item>Asian</item>
+        <item>Native American</item>
+        <item>Caucasian</item>
+    </string-array>
+
+    <string-array name="religion_array">
+        <item>Prefer not to answer</item>
+        <item>Atheist</item>
+        <item>Buddhist</item>
+        <item>Christian</item>
+        <item>Jewish</item>
+        <item>Hindi</item>
+        <item>Muslim</item>
+    </string-array>
+</resources>

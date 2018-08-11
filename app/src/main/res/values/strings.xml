@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Pheramor</string>
+    <string name="action_settings">Settings</string>
+    <!--hints-->
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="zip">Zipcode</string>
+    <string name="height">Height in cms</string>
+    <string name="gender">Gender</string>
+    <string name="dob">Birthday</string>
+    <string name="interested_gender">Interested in: </string>
+    <string name="age_range">Age range</string>
+    <string name="age_min">Min</string>
+    <string name="age_max">Max</string>
+    <string name="race">My Race</string>
+    <string name="religion">My Religion</string>
+    <string name="picture">Picture</string>
+    <string name="cont">Continue</string>
+    <string name="preview">Preview</string>
+    <!--Menu-->
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="men">Men</string>
+    <string name="women">Women</string>
+    <!--Tool Bar-->
+    <string name="sign_up">Signing Up</string>
+    <!--Helper texts-->
+    <string name="iam">I am</string>
+    <string name="choose_picture">Choose profile picture</string>
+    <string name="required">Field is required</string>
+    <string name="pheramor">Pheramor</string>
+    <string name="ready">All set to find Love</string>
+
+</resources>

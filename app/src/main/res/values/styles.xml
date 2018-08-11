@@ -1,0 +1,55 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="ToolBarTheme" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:textColorPrimary">@android:color/darker_gray</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="App_EditTextStyle" parent="@android:style/Widget.EditText">
+        <item name="android:background">@drawable/textfield_style</item>
+        <item name="android:layout_height">40dp</item>
+    </style>
+
+    <style name="ErrorText" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textColor">@android:color/holo_red_light</item>
+    </style>
+
+    <style name="ReviewTextViewItalic" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textStyle">italic</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <style name="ReviewTextViewBold" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textStyle">italic</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <style name="ContinueButtonStyle">
+        <item name="android:textColor">@drawable/continue_text_selector</item>
+        <item name="android:background">@drawable/continue_selector</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/continue_text_size</item>
+        <item name="android:enabled">false</item>
+        <item name="android:text">@string/cont</item>
+        <item name="android:gravity">center</item>
+    </style>
+</resources>

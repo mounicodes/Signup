@@ -1,0 +1,10 @@
+<resources>
+    <dimen name="def_margin">40dp</dimen>
+    <dimen name="helper_text">25sp</dimen>
+    <dimen name="helper_text_pad">4dp</dimen>
+    <dimen name="image_margin">12dp</dimen>
+    <dimen name="def_margin_fields">10dp</dimen>
+    <dimen name="race_pad">16dp</dimen>
+
+    <dimen name="continue_text_size">20sp</dimen>
+</resources>
