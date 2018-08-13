@@ -11,12 +11,16 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
+
 import com.mounica.pheramor.MessageEvent.UriEvent;
 import com.mounica.pheramor.R;
+
 import org.greenrobot.eventbus.EventBus;
 
+/**
+ * Fragment that collects user image
+ */
 public class PictureFragment extends Fragment {
 
     private static final String TAG = "PictureFragment";
@@ -37,6 +41,7 @@ public class PictureFragment extends Fragment {
         final Button gallery = view.findViewById(R.id.button_gallery);
         mContinueButton = view.findViewById(R.id.button_continue);
         mProfilePic = view.findViewById(R.id.image_profile_picture);
+
         gallery.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(final View v) {
@@ -52,8 +57,8 @@ public class PictureFragment extends Fragment {
             public void onClick(final View v) {
                 FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager()
                         .beginTransaction();
-                fragmentTransaction.replace(R.id.frame_fragment_holder, new ReviewFragment());
-                fragmentTransaction.addToBackStack("review");
+                fragmentTransaction.replace(R.id.frame_fragment_holder, new ProfileFragment());
+                fragmentTransaction.addToBackStack("profile");
                 fragmentTransaction.commit();
             }
         });
@@ -66,7 +71,6 @@ public class PictureFragment extends Fragment {
             return;
         }
         Uri imageUri = data.getData();
-
         mProfilePic.setImageURI(imageUri);
         mProfilePic.setVisibility(View.VISIBLE);
         mContinueButton.setEnabled(true);

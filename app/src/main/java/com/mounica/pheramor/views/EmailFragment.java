@@ -17,13 +17,14 @@ import android.widget.EditText;
 
 import com.mounica.pheramor.MessageEvent.EmailEvent;
 import com.mounica.pheramor.R;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
 import org.greenrobot.eventbus.EventBus;
 
+/**
+ * Fragment to collect user email and validate it
+ */
 public class EmailFragment extends Fragment {
 
-    private static final String TAG = "EmailFragment";
     private static final String ERROR = "Please enter a valid email address";
     private Button mContinueButton;
     private EditText mEmail;
@@ -44,6 +45,7 @@ public class EmailFragment extends Fragment {
         mEmail = view.findViewById(R.id.edit_email);
         mTextInputLayout = view.findViewById(R.id.textinput_email);
         mContinueButton = view.findViewById(R.id.button_continue);
+
         mContinueButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(final View v) {
@@ -100,7 +102,6 @@ public class EmailFragment extends Fragment {
         if (email == null || email.length() == 0) {
             return false;
         }
-
         return Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 }

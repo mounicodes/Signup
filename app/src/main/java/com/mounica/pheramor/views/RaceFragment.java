@@ -10,10 +10,15 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Spinner;
+
 import com.mounica.pheramor.MessageEvent.RaceEvent;
 import com.mounica.pheramor.R;
+
 import org.greenrobot.eventbus.EventBus;
 
+/**
+ * Fragment that collects user race/religion
+ */
 public class RaceFragment extends Fragment {
 
     private Spinner mRace;

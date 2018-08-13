@@ -15,14 +15,19 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
+
 import com.mounica.pheramor.MessageEvent.PasswordEvent;
 import com.mounica.pheramor.R;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 import org.greenrobot.eventbus.EventBus;
 
+/**
+ * Fragment that collects/validates user password
+ */
 public class PasswordFragment extends Fragment implements TextWatcher {
 
     private TextInputEditText mPassword;
@@ -108,5 +113,4 @@ public class PasswordFragment extends Fragment implements TextWatcher {
     private void enableContinueButton() {
         mContinue.setEnabled(true);
     }
-
 }

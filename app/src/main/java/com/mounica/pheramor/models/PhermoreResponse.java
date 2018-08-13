@@ -1,5 +1,8 @@
 package com.mounica.pheramor.models;
 
+/**
+ * Data model to hold Json response
+ */
 public class PhermoreResponse {
 
     private String message;

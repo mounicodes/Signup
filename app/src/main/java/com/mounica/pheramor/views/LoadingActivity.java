@@ -7,8 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+
 import com.mounica.pheramor.R;
 
+/**
+ * Initial sign-up page
+ */
 public class LoadingActivity extends AppCompatActivity {
 
     @Override
@@ -19,7 +23,7 @@ public class LoadingActivity extends AppCompatActivity {
         signUp.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(final View v) {
-                Intent mainIntent = new Intent(LoadingActivity.this,MainActivity.class);
+                Intent mainIntent = new Intent(LoadingActivity.this, MainActivity.class);
                 startActivity(mainIntent);
             }
         });

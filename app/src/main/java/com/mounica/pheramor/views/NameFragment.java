@@ -13,10 +13,14 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+
 import com.mounica.pheramor.MessageEvent.NameEvent;
 import com.mounica.pheramor.R;
 import org.greenrobot.eventbus.EventBus;
 
+/**
+ * Fragment that collects user details name/zipcode/height
+ */
 public class NameFragment extends Fragment {
 
     private EditText mFirstName;

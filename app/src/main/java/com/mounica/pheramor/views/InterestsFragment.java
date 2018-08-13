@@ -9,15 +9,18 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+
 import com.mounica.pheramor.MessageEvent.InterestsEvent;
 import com.mounica.pheramor.R;
+
 import org.florescu.android.rangeseekbar.RangeSeekBar;
 import org.florescu.android.rangeseekbar.RangeSeekBar.OnRangeSeekBarChangeListener;
 import org.greenrobot.eventbus.EventBus;
 
+/**
+ * Fragment to collect users interests (Gender and Age range)
+ */
 public class InterestsFragment extends Fragment implements OnClickListener {
-
-    private static final String TAG = "InterestsFragment";
 
     private Button mContinueButton;
     private Button mMale;

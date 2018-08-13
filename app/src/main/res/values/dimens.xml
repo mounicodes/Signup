@@ -1,5 +1,6 @@
 <resources>
     <dimen name="def_margin">40dp</dimen>
+    <dimen name="def_neg_margin">-40dp</dimen>
     <dimen name="helper_text">25sp</dimen>
     <dimen name="helper_text_pad">4dp</dimen>
     <dimen name="image_margin">12dp</dimen>

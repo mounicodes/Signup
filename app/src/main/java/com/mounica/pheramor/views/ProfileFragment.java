@@ -11,51 +11,63 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
+
 import com.google.gson.GsonBuilder;
 import com.mounica.pheramor.ApiEndpointInterface;
 import com.mounica.pheramor.R;
+import com.mounica.pheramor.databinding.FragmentProfileBinding;
 import com.mounica.pheramor.models.PhermoreResponse;
 import com.mounica.pheramor.models.User;
-import com.mounica.pheramor.databinding.FragmentReviewBinding;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ReviewFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
-    private FragmentReviewBinding mFragmentBinding;
-    private Button mContinue;
     private static final String PHERAMOR_URL = "https://external.dev.pheramor.com";
+    private static final String TAG = "ProfileFragment";
+    private FragmentProfileBinding mFragmentProfileBinding;
+    private Button mOkButton;
     private User mUser;
-    private static final String TAG = "ReviewFragment";
+    private ImageView mProfileImage;
 
     @Nullable
     @Override
     public View onCreateView(final LayoutInflater inflater, @Nullable final ViewGroup container,
             @Nullable final Bundle savedInstanceState) {
-        mFragmentBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_review, container, false);
-        return mFragmentBinding.getRoot();
+        mFragmentProfileBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile, container, false);
+        return mFragmentProfileBinding.getRoot();
     }
 
     @Override
     public void onViewCreated(final View view, @Nullable final Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        mContinue = mFragmentBinding.buttonContinue;
+        mOkButton = mFragmentProfileBinding.buttonOk;
+        mProfileImage = mFragmentProfileBinding.imageDp;
         mUser = ((MainActivity) getActivity()).getUser();
         if (mUser != null) {
-            mFragmentBinding.setUser(mUser);
+            mFragmentProfileBinding.setUser(mUser);
+            performDataProcessing();
         }
 
-        mContinue.setOnClickListener(new OnClickListener() {
+        mOkButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(final View v) {
                 performNetworkOperations();
             }
         });
+    }
+
+    private void performDataProcessing() {
+        String fullname = mUser.getFirstName() + " " + mUser.getLastName();
+        mFragmentProfileBinding.textUname.setText(fullname);
+
     }
 
     public void performNetworkOperations() {
@@ -75,6 +87,7 @@ public class ReviewFragment extends Fragment {
                         }
                         Intent successIntent = new Intent(getActivity(), EndActivity.class);
                         startActivity(successIntent);
+                        getActivity().finishAffinity();
                     }
 
                     @Override
@@ -84,5 +97,4 @@ public class ReviewFragment extends Fragment {
                     }
                 });
     }
-
 }

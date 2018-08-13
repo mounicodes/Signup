@@ -2,7 +2,8 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="@dimen/def_margin">
 
     <TextView
         android:id="@+id/text_find_gender"
@@ -21,6 +22,8 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/selector_gender"
         android:text="@string/male"
+        app:layout_constraintEnd_toStartOf="@+id/button_female"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_find_gender" />
 
@@ -32,11 +35,16 @@
         android:background="@drawable/selector_gender"
         android:text="@string/female"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_male"
         app:layout_constraintTop_toBottomOf="@id/text_find_gender" />
 
     <android.support.design.widget.TextInputLayout
+        android:id="@+id/textinput_dob"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:errorEnabled="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button_male">
 
@@ -48,7 +56,7 @@
             android:clickable="true"
             android:drawableEnd="@android:drawable/ic_menu_my_calendar"
             android:hint="@string/dob"
-            android:inputType="none" />
+            android:singleLine="true" />
     </android.support.design.widget.TextInputLayout>
 
     <Button

@@ -19,7 +19,7 @@
     <string name="religion">My Religion</string>
     <string name="picture">Picture</string>
     <string name="cont">Continue</string>
-    <string name="preview">Preview</string>
+    <string name="preview">Submit</string>
     <!--Menu-->
     <string name="male">Male</string>
     <string name="female">Female</string>
@@ -33,5 +33,7 @@
     <string name="required">Field is required</string>
     <string name="pheramor">Pheramor</string>
     <string name="ready">All set to find Love</string>
+    <!--Profile page texts-->
+    <string name="name">Name : %s %s</string>
 
 </resources>

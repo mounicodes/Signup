@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+
 import com.mounica.pheramor.MessageEvent.EmailEvent;
 import com.mounica.pheramor.MessageEvent.GenderEvent;
 import com.mounica.pheramor.MessageEvent.InterestsEvent;
@@ -17,9 +18,14 @@ import com.mounica.pheramor.MessageEvent.UriEvent;
 import com.mounica.pheramor.R;
 import com.mounica.pheramor.models.User;
 import com.mounica.pheramor.databinding.ActivityMainBinding;
+
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
+
+/**
+ * Activity that holds all the fragments
+ */
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,15 +49,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+
+        // Register the event bus
         EventBus.getDefault().register(this);
         Toolbar toolbar = mBinding.toolbar;
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(getResources().getString(R.string.sign_up));
 
+        // Enable home button
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        // load the first fragment to take email from the user
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.add(R.id.frame_fragment_holder, new EmailFragment()).addToBackStack("email");
         fragmentTransaction.commit();
@@ -63,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    // Subscribe to listen to the data updates from all the fragments
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEmailEvent(EmailEvent emailEvent) {
         mEmail = emailEvent.getEmail();

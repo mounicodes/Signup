@@ -1,8 +1,10 @@
 package com.mounica.pheramor;
 
 import android.net.Uri;
-import javax.sql.StatementEvent;
 
+/**
+ * Event class
+ */
 public class MessageEvent {
 
     public static class EmailEvent {
